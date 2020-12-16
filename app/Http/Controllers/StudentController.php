@@ -46,7 +46,7 @@ class StudentController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:students,email',
         ]);
 
         Student::create($request->all());
